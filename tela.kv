@@ -1,0 +1,72 @@
+GridLayout:
+    cols: 1
+    size_hint: (0.6, 0.7)
+    pos_hint: {"center_x": 0.5, "center_y":0.5}
+    lbl:resultado
+
+    Image:
+        id: imagem1
+        source: "Logo.png"
+        size_hint: 1, 4
+
+    BoxLayout:
+        Label:
+            id: de
+            text: 'De'
+            color: [1, 1, 1, 1]
+            font_size: 22
+
+        TextInput:
+            id: caixa_1
+            multiline: False
+            font_size: 15
+            size_hint: 1, 0.6
+            on_text: app.process_1()
+
+    BoxLayout:
+        Label:
+            id: para
+            text: 'Para'
+            color: [1, 1, 1, 1]
+            font_size: 22
+
+        TextInput:
+            id: caixa_2
+            multiline: False
+            font_size: 15
+            size_hint: 1, 0.6
+            on_text: app.process_2()
+
+    BoxLayout:
+
+        Label:
+            id: valor
+            text: 'Valor'
+            color: [1, 1, 1, 1]
+            font_size: 22
+
+        TextInput:
+            id: caixa_3
+            multiline: False
+            font_size: 15
+            size_hint: 1, 0.6
+            on_text: app.process_3()
+    BoxLayout:
+        Button:
+            id: botao
+            text: 'Converter'
+            font_size: 18
+            size_hint: 1, 0.6
+            bold: True
+            on_press: app.cotacao()
+
+    Label:
+        id: resultado
+        text: ''
+        font_size: 30
+
+    Label:
+        id: erro
+        text: ''
+        color: [0, 84, 80, 19]
+        font_size: 22
